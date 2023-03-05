@@ -34,7 +34,7 @@ namespace ESOFT_Final
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbReg = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtEtype = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@ namespace ESOFT_Final
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbFmale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.txtLname = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@ namespace ESOFT_Final
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbReg);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -107,6 +107,7 @@ namespace ESOFT_Final
             this.button3.TabIndex = 7;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -128,13 +129,13 @@ namespace ESOFT_Final
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // cmbReg
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(154, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 23);
-            this.comboBox1.TabIndex = 4;
+            this.cmbReg.FormattingEnabled = true;
+            this.cmbReg.Location = new System.Drawing.Point(154, 21);
+            this.cmbReg.Name = "cmbReg";
+            this.cmbReg.Size = new System.Drawing.Size(133, 23);
+            this.cmbReg.TabIndex = 4;
             // 
             // label2
             // 
@@ -309,7 +310,7 @@ namespace ESOFT_Final
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rbFemale);
+            this.groupBox2.Controls.Add(this.rbFmale);
             this.groupBox2.Controls.Add(this.rbMale);
             this.groupBox2.Controls.Add(this.dtpDob);
             this.groupBox2.Controls.Add(this.txtLname);
@@ -325,18 +326,18 @@ namespace ESOFT_Final
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Basic Details";
             // 
-            // rbFemale
+            // rbFmale
             // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFemale.Location = new System.Drawing.Point(213, 117);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rbFemale.TabIndex = 7;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Female";
-            this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFmale.AutoSize = true;
+            this.rbFmale.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbFmale.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFmale.Location = new System.Drawing.Point(213, 117);
+            this.rbFmale.Name = "rbFmale";
+            this.rbFmale.Size = new System.Drawing.Size(59, 17);
+            this.rbFmale.TabIndex = 7;
+            this.rbFmale.TabStop = true;
+            this.rbFmale.Text = "Female";
+            this.rbFmale.UseVisualStyleBackColor = true;
             // 
             // rbMale
             // 
@@ -481,14 +482,14 @@ namespace ESOFT_Final
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbReg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.RadioButton rbFmale;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.DateTimePicker dtpDob;
         private System.Windows.Forms.TextBox txtLname;

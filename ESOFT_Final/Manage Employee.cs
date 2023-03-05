@@ -61,12 +61,13 @@ namespace ESOFT_Final
                 }
                 string address = txtAddress.Text;
                 string email = txtEmail.Text;
-                int mobilephone = int.Parse(txtMobile.Text);
+                int mobilePhone = int.Parse(txtMobile.Text);
                 int homePhone = int.Parse(txtHphone.Text);
                 string departmentName = txtDName.Text;
                 string designation = txtDesignation.Text;
                 string employeeType = txtEtype.Text;
-                string query_insert = "insert into employee values('" + firstName + "','" + lastName + "','" + dtpDob.Text + "','" + gender + "','" + address + "','" + email + "','" + mobilephone, +"','" + homePhone + "','" + departmentName + "','" + designation + "','" + employeeType + ")";
+                string query_insert = "insert into employee values('" + firstName + "','" + lastName + "','" + dtpDob.Text + "','" + gender + "','" + address + "','" + email + "'," + 
+                    mobilePhone, + "," + homePhone + ", '" + departmentName + "', '" + designation + "'," + employeeType + ")";
 
                 con.Open();
                 SqlCommand cmnd = new SqlCommand(query_insert, con);
@@ -124,5 +125,26 @@ namespace ESOFT_Final
                 MessageBox.Show("Recird Updated Successfully!", "Updated Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cmbReg.Text = "";
+            txtFname.Text = "";
+            txtLname.Text = "";
+            dtpDob.Format = DateTimePickerFormat.Custom;
+            dtpDob.CustomFormat = "yyyy/MM/dd";
+            DateTime thisDay = DateTime.Today;
+            dtpDob.Text = thisDay.ToString();
+
+            rbMale.Checked = false;
+            rbFmale.Checked = false;
+
+            txtAddress.Text = "";
+            txtEmail.Text = "";
+            txtMobile.Text = "";
+            txtHphone.Text = "";
+            txtDName.Text = "";
+            txtDesignation.Text = "";
+            txtEtype.Text = "";        }
     }
 }
