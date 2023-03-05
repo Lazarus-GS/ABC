@@ -1,0 +1,10 @@
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\bin\Debug\ESOFT_Final.exe.config
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\bin\Debug\ESOFT_Final.exe
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\bin\Debug\ESOFT_Final.pdb
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.csproj.AssemblyReference.cache
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.Form1.resources
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.Properties.Resources.resources
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.csproj.GenerateResource.cache
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.csproj.CoreCompileInputs.cache
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.exe
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.pdb
