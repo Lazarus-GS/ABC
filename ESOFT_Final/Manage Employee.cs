@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ESOFT_Final
 {
-    public partial class Form1 : Form
+    public partial class Manage_Employee : Form
     {
-        public Form1()
+        public Manage_Employee()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }
@@ -27,7 +27,12 @@ namespace ESOFT_Final
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

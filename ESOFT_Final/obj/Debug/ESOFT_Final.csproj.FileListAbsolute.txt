@@ -8,3 +8,4 @@ C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.csproj.Gene
 C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.csproj.CoreCompileInputs.cache
 C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.exe
 C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.pdb
+C:\Users\acer\Documents\GitHub\ABC\ESOFT_Final\obj\Debug\ESOFT_Final.Manage_Employee.resources
