@@ -55,9 +55,7 @@ namespace ESOFT_Final
                 }
                 else
                 {
-
                     gender = "Female";
-
                 }
                 string address = txtAddress.Text;
                 string email = txtEmail.Text;
@@ -66,20 +64,17 @@ namespace ESOFT_Final
                 string departmentName = txtDName.Text;
                 string designation = txtDesignation.Text;
                 string employeeType = txtEtype.Text;
-                string query_insert = "insert into employee values('" + firstName + "','" + lastName + "','" + dtpDob.Text + "','" + gender + "','" + address + "','" + email + "'," + 
+                string query_insert = "insert into employee values('" + firstName + "','" + lastName + "','" + dtpDob.Text + "','" + gender + "','" + address + "','" + email + "'," +
                     mobilePhone + "," + homePhone + ", '" + departmentName + "', '" + designation + "'," + employeeType + ")";
 
                 con.Open();
                 SqlCommand cmnd = new SqlCommand(query_insert, con);
 
                 cmnd.ExecuteNonQuery();
-                con.Close();
 
                 MessageBox.Show("Record Added Successfully!", "Registered Employee!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
             catch (SqlException ex)
-
             {
                 string msg = "Insert Error:";
                 msg += ex.Message;
@@ -91,8 +86,8 @@ namespace ESOFT_Final
                     con.Close();
                 }
             }
-
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

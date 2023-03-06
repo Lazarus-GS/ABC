@@ -94,10 +94,15 @@ namespace ESOFT_Final
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            UpdatePasswordMask();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePasswordMask();
+        }
+
+        private void UpdatePasswordMask()
         {
             if (checkBox1.Checked)
             {
