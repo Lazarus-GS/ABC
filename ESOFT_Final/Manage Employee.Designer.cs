@@ -462,6 +462,7 @@ namespace ESOFT_Final
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Manage_Employee";
             this.Text = "ABC Cooperation";
             this.Load += new System.EventHandler(this.Manage_Employee_Load);

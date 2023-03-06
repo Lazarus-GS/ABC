@@ -50,7 +50,7 @@ namespace ESOFT_Final
                 string username = txtUsername.Text;
                 string pass = txtpassword.Text;
 
-                string query_select = "SELECT * FROM login WHERE username ='" + username + " 'And password =' " + pass + "'";
+                string query_select = "SELECT * FROM login WHERE username ='" + username + "' And password ='" + pass + "'";
                 SqlCommand cmnd = new SqlCommand(query_select, con);
                 SqlDataReader row = cmnd.ExecuteReader();
 
@@ -64,7 +64,7 @@ namespace ESOFT_Final
                 {
                     MessageBox.Show("Invalid Login Credentials, Please check Username and Password and try again !", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                row.Close(); // close the SqlDataReader object
+                row.Close(); 
             }
             catch(Exception ex)
             {
@@ -72,7 +72,7 @@ namespace ESOFT_Final
             }
             finally
             {
-                con.Close(); // close the SqlConnection object
+                con.Close(); 
             }
   
         }
@@ -95,6 +95,18 @@ namespace ESOFT_Final
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtpassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtpassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }
