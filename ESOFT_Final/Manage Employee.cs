@@ -67,7 +67,7 @@ namespace ESOFT_Final
                 string designation = txtDesignation.Text;
                 string employeeType = txtEtype.Text;
                 string query_insert = "insert into employee values('" + firstName + "','" + lastName + "','" + dtpDob.Text + "','" + gender + "','" + address + "','" + email + "'," + 
-                    mobilePhone, + "," + homePhone + ", '" + departmentName + "', '" + designation + "'," + employeeType + ")";
+                    mobilePhone + "," + homePhone + ", '" + departmentName + "', '" + designation + "'," + employeeType + ")";
 
                 con.Open();
                 SqlCommand cmnd = new SqlCommand(query_insert, con);
@@ -146,5 +146,124 @@ namespace ESOFT_Final
             txtDName.Text = "";
             txtDesignation.Text = "";
             txtEtype.Text = "";        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, Do you really want to Delete this Record...?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string no = cmbReg.Text;
+
+                string query_insert = "DELETE FROM employee WHERE empNo = " + no + "";
+                con.Open();
+                SqlCommand cmnd = new SqlCommand(query_insert, con);
+                cmnd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record Deleted Successfully!", "Deleted Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 obj = new Form1();
+            obj.Show();
+            this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, Do you really want to exit...?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void Manage_Employee_Load(object sender, EventArgs e)
+        {
+            con.Open();
+            string query_select = "SELECT * FROM employee";
+            SqlCommand cmnd = new SqlCommand(query_select, con);
+            SqlDataReader row = cmnd.ExecuteReader();
+            cmbReg.Items.Add("New Register");
+            while(row.Read())
+            {
+                cmbReg.Items.Add(row[0].ToString());
+            }
+            con.Close();
+        }
+
+        private void cmbReg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string no = cmbReg.Text;
+            if (no != "New Register")
+            {
+                con.Open();
+                string query_select = "SELECT * FROM Registration2 WHERE regNo =" + no;
+                SqlCommand cmd = new SqlCommand(query_select, con);
+                SqlDataReader row = cmd.ExecuteReader();
+                while (row.Read())
+                {
+                    txtFname.Text = row[1].ToString();
+                    txtLname.Text = row[2].ToString();
+                    dtpDob.Format = DateTimePickerFormat.Custom;
+                    dtpDob.CustomFormat = "yyyy/MM/dd";
+                    dtpDob.Text = row[3].ToString();
+                    if (row[4].ToString() == "Male")
+                    {
+                        rbMale.Checked = true;
+                        rbFmale.Checked = false;
+                    }
+                    else
+                    {
+                        rbMale.Checked = false;
+                        rbFmale.Checked = true;
+                    }
+                    txtAddress.Text = row[5].ToString();
+                    txtEmail.Text = row[6].ToString();
+                    txtMobile.Text = row[7].ToString();
+                    txtHphone.Text = row[8].ToString();
+                    txtDName.Text = row[9].ToString();
+                    txtDesignation.Text = row[10].ToString();
+                    txtEtype.Text = row[11].ToString();
+                }
+                con.Close();
+                btnRegister.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;            
+            }
+            else
+            {
+                txtFname.Text = "";
+                txtLname.Text = "";
+                dtpDob.Format = DateTimePickerFormat.Custom;
+                dtpDob.CustomFormat = "yyyy/MM/dd";
+                DateTime thisDay = DateTime.Today;
+                dtpDob.Text = thisDay.ToString();
+
+                    rbMale.Checked = true;
+                    rbFmale.Checked = false;
+
+                    txtAddress.Text = "";
+                    txtEmail.Text = "";
+                    txtMobile.Text = "";
+                    txtHphone.Text = "";
+                    txtDName.Text = "";
+                    txtDesignation.Text = "";
+                    txtEtype.Text = "";
+                    btnRegister.Enabled = true;
+                    btnUpdate.Enabled = false;
+                    btnDelete.Enabled = false;
+            }
+        }
+        
     }
 }
