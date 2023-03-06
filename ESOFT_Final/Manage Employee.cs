@@ -84,6 +84,13 @@ namespace ESOFT_Final
                 string msg = "Insert Error:";
                 msg += ex.Message;
             }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
 
         }
 
