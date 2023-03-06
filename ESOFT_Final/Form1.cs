@@ -43,25 +43,38 @@ namespace ESOFT_Final
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Open();
-
-            string username = txtUsername.Text;
-            string pass = txtpassword.Text;
-
-            string query_select = "SELECT * FROM login WHERE username ='" + username + " 'And password =' " + pass + "'";
-            SqlCommand cmnd = new SqlCommand(query_select, con);
-            SqlDataReader row = cmnd.ExecuteReader();
-
-            if (row.HasRows)
+            try
             {
-                this.Hide();
-                Manage_Employee obj = new Manage_Employee();
-                obj.Show();
+                con.Open();
+
+                string username = txtUsername.Text;
+                string pass = txtpassword.Text;
+
+                string query_select = "SELECT * FROM login WHERE username ='" + username + " 'And password =' " + pass + "'";
+                SqlCommand cmnd = new SqlCommand(query_select, con);
+                SqlDataReader row = cmnd.ExecuteReader();
+
+                if (row.HasRows)
+                {
+                    this.Hide();
+                    Manage_Employee obj = new Manage_Employee();
+                    obj.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login Credentials, Please check Username and Password and try again !", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                row.Close(); // close the SqlDataReader object
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Invalid Login Credentials, Please check Username and Password and try again !", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
             }
+            finally
+            {
+                con.Close(); // close the SqlConnection object
+            }
+  
         }
 
         private void button3_Click(object sender, EventArgs e)
